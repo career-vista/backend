@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "build": "echo 'No build step required for Vercel'",
-    "vercel-build": "echo 'No build step required for Vercel'",
+    "build": "tsc --noEmit false",
+    "vercel-build": "echo 'Build handled by Vercel'",
     "test": "jest",
     "lint": "eslint . --ext .ts",
     "import:colleges": "ts-node src/scripts/importColleges.ts --file data/colleges.csv",

@@ -6,7 +6,10 @@
       "use": "@vercel/node",
       "config": {
         "includeFiles": ["src/**"],
-        "maxDuration": 30
+        "maxDuration": 30,
+        "typescript": {
+          "outputDirectory": "dist"
+        }
       }
     }
   ],
