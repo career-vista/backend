@@ -1,0 +1,11 @@
+src/
+node_modules/
+.git/
+.env.example
+README.md
+tsconfig.json
+pnpm-lock.yaml
+*.log
+*.md
+.vscode/
+.idea/
