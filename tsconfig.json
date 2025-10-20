@@ -8,15 +8,18 @@
     "strict": false,
     "noImplicitAny": false,
     "strictNullChecks": false,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "paths": {
       "@/*": ["src/*"]
     }
