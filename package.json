@@ -4,10 +4,10 @@
   "description": "Backend for CareerVista AI",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node api/index.js",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "build": "tsc --noEmit false",
-    "vercel-build": "echo 'Build handled by Vercel'",
+    "build": "tsc --skipLibCheck --noEmit false --outDir dist && node -e \"console.log('Build completed')\"",
+    "vercel-build": "npm run build",
     "test": "jest",
     "lint": "eslint . --ext .ts",
     "import:colleges": "ts-node src/scripts/importColleges.ts --file data/colleges.csv",

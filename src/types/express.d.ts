@@ -1,38 +1,56 @@
-import { NextFunction as ExpressNextFunction } from 'express';
-
+// Global type augmentation for Express
 declare global {
   namespace Express {
-    export interface Request {
+    interface Request {
       user?: any;
       userId?: string;
-      body: any;
-      query: any;
-      params: any;
-      headers: any;
-      ip: string;
-      connection: any;
-      method: string;
-      path: string;
-      protocol: string;
-      get(name: string): string | undefined;
+      body?: any;
+      query?: any;
+      params?: any;
+      headers?: any;
+      ip?: string;
+      connection?: any;
+      method?: string;
+      path?: string;
+      protocol?: string;
+      get?(name: string): string | undefined;
     }
 
-    export interface Response {
-      status(code: number): Response;
-      json(obj?: any): Response;
+    interface Response {
+      status?(code: number): Response;
+      json?(obj?: any): Response;
     }
   }
 }
 
+// Module augmentation for express-serve-static-core
 declare module 'express-serve-static-core' {
-  export interface Request {
+  interface Request {
     user?: any;
     userId?: string;
+    body?: any;
+    query?: any;
+    params?: any;
+    headers?: any;
+    ip?: string;
+    connection?: any;
+    method?: string;
+    path?: string;
+    protocol?: string;
+    get?(name: string): string | undefined;
+  }
+
+  interface Response {
+    status?(code: number): Response;
+    json?(obj?: any): Response;
   }
 }
 
+// Module augmentation for express
 declare module 'express' {
-  export interface NextFunction {
+  interface NextFunction {
     (): void;
   }
 }
+
+export {};
